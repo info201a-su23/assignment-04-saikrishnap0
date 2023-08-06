@@ -56,11 +56,22 @@ What are possible limitations or problems with this data?   (at least 200 words)
 source("chart1_example.R")
 ```
 
+- The time trend chart illustrates the prison population rates across different levels of urbanity, revealing intriguing dynamics. Rural areas are seen to have the highest prison population rate, followed by small/mid-sized locations, suburban areas, and finally urban regions. This pattern diverges from common perceptions that associate higher incarceration rates with more urbanized locales. Over the examined period, the urban areas exhibit the most significant decline in prison population rates, while rural areas register the largest increase. These trends might reflect shifts in law enforcement practices, economic conditions, or societal changes unique to each level of urbanity. The unexpected rise in rural areas and the substantial drop in urban zones call for a deeper examination to understand the underlying causes and implications of these evolving patterns.
+
 ### Variable Comparison Chart
 
 ```{r, echo=FALSE, warning = FALSE,  code = readLines("chart2_example.R")}
 ```
+
+- The scatter plot showing Total Jail Population Rate vs. Total Prison Population Rate uncovers a positive correlation between these variables, as evidenced by the upward trend line. A high concentration of data points in the 0-250 range indicates that most regions have relatively low incarceration rates. However, as the data points move towards the upper right corner, they become more dispersed. This dispersion reflects a less uniform pattern among areas with higher incarceration rates, suggesting variations in local policy or unique conditions. This plot offers a valuable insight into the relationship between jail and prison populations, hinting at underlying trends that may require further investigation.
+
+
 ### Map
 ```{r, message= FALSE, echo=FALSE}
 eval(parse(text = readLines("chart3.R")))
 ```
+
+- In the mapping of incarceration rates across various counties in Washington, a notable pattern emerges with the highest concentrations in Yakima and Ferry counties, which are characterized as rural areas. Conversely, more urbanized regions like the Puget Sound display a lighter color, indicating lower incarceration rates. These counties are depicted with contrasting shades on the map, allowing for an immediate identification of areas with differing levels of imprisonment. The stark difference between the rural and urban areas emphasizes a broader trend that seems to link rural counties with higher levels of incarceration while urban areas appear to have relatively lower rates. Whether driven by socio-economic factors, policies, or other variables, this pattern prompts further investigation into the underlying reasons for such disparate distributions between urban and rural regions, raising questions about the justice system and its interactions with different community environments.
+
+
+
