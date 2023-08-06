@@ -1,71 +1,66 @@
 ---
-title: "A3: Incarceration"
+title: "Incarceration Trends in the U.S. by Urbanicity"
 output: html_document
 ---
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+- The problem domain of this dataset that I chose to study and analyze is the relationship between urbanicity and incarceration rates in various counties and states across the United States from 1990 onwards. Urbanicity refers to the classification of regions as rural, suburban, small/mid, or urban, and I'm interested in exploring how this factor might influence the rates of jail and prison populations. My analysis calculates the average total jail and prison population rate by urbanicity, identifies the urbanicity with the highest and lowest total prison population rates, and analyzes the trend of prison population rates across all years, grouped by urbanicity. By examining these selected variables, this study aims to reveal the underlying patterns and potential social implications of the relationship between urbanicity and incarceration. It may help shed light on the policies and social dynamics that lead to differences in incarceration rates across different urban classifications.
+
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+```{r setup, include=FALSE}
+source("summary.R")
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
-
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
-
+- The analysis of incarceration trends across different urbanicities in the United States reveals distinct patterns. The urbanicity with the lowest prison population rate is rural, while the highest is found in small/mid areas. When examining the change in prison population rates over time, rural areas saw an increase of 1004.22 individuals, small/mid areas increased by 1080.09 individuals, suburban areas increased by 505.82 individuals, and urban areas increased by 124.3 individuals. These changes in population rates might reflect different policies, social dynamics, or economic factors affecting urban and rural areas differently. The findings shed light on the relationship between urbanicity and incarceration rates, offering insights that may guide policy and interventions.
+ 
 ### The Dataset
 
 Who collected the data?  
+
+- The Vera Institute of Justice collected the data. 
+
 How was the data collected or generated?  
+
+- The Vera organization collected data on U.S. incarceration to analyze patterns, particularly relating to race. Drawing from various sources such as the Bureau of Justice Statistics (BJS), the dataset offers a detailed county-level view. The goal is to fill gaps in prison population information, enabling more insightful and grounded studies.
+
 Why was the data collected?  
-How many observations (rows) are in your data?  
+
+- The data on racial disparities in incarceration was collected to analyze patterns of incarceration in the U.S. Existing information on prison populations was often insufficient for detailed studies, so this data, with its county-level variability, allows for more precise analysis. The aim is to identify systemic racial biases within the legal system, highlight areas of discrimination, and promote fairness and accountability. By understanding these contours and trends, law enforcement agencies can foster public awareness of systemic racism and work towards human rights within the legal framework.
+
+How many observations (rows) are in your data? 
+
+- There are 39 rows in the dataset. 
+
 How many features (columns) are in the data?  
+
+- There are 23 columns in the dataset. 
+
 What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+
+- Analyzing the data related to racial disparities in incarceration raises significant ethical questions, particularly concerning the lack of context surrounding these observations and counts. The accuracy and proper representation of population sizes in prisons, especially in relation to race, are unclear. Furthermore, the data's focus on mere population counts may overlook essential aspects such as the treatment, crimes, or personal situations of those represented, reducing individuals to mere numbers.
+
+- These considerations prompt questions about personal or sensitive information that might be traceable to individuals and concerns about ownership, access, and potential misuse of the data. Who collected it, who can access it, and who "owns" it can deeply influence how it is used, and for what purposes. Misinterpretation or misuse might further marginalize or stereotype certain racial or social groups. Thus, while working with this data, we must recognize that it represents actual human beings and be mindful of the conclusions we draw, as they can have real implications on lives and society's perception of different communities.
+
 What are possible limitations or problems with this data?   (at least 200 words)
 
+- The data related to U.S. incarceration has significant limitations, notably the absence of information in numerous states over extended periods, undermining analyses like racial comparisons. This lack of data raises questions about why certain information might be missing and weakens the conclusions that can be drawn.
+
+- Additionally, the data sets lose context and human stories behind the numbers, potentially concealing disparities in treatment or unjust imprisonments. Temporal constraints, geographical inconsistencies, and a lack of distinction between crime types further hinder understanding. These combined limitations highlight the need for caution in interpreting this data and reveal the necessity for more comprehensive and context-aware analyses.
 
 ### Trends Over Time Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+source("chart1_example.R")
 ```
 
 ### Variable Comparison Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
-
+```{r, echo=FALSE, warning = FALSE,  code = readLines("chart2_example.R")}
+```
 ### Map
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
-
+```{r, message= FALSE, echo=FALSE}
+eval(parse(text = readLines("chart3.R")))
+```
